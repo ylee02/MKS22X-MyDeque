@@ -25,7 +25,14 @@ public class MyDeque<E>{
 
   private void resize() {
     int[] temp = new int[size * 2];
-     
+    for (int i = 0; i < size; i++) {
+      if (start + i >= size) {
+        temp[i] = data[i + start - data.length];
+      }else {
+        temp[i] = data[i + start];
+      }
+    }
+    data = temp;
   }
   public void addFirst(E element){
     if (end != 0 && start == end) {
