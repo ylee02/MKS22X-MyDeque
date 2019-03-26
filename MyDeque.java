@@ -93,6 +93,10 @@ public class MyDeque<E>{
     }
     return temp;
   }
-  public E getFirst(){ }
-  public E getLast(){ }
+  public E getFirst(){
+    return data[start];
+  }
+  public E getLast(){
+    return data[end];
+  }
 }
