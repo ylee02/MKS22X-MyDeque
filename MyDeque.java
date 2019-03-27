@@ -1,4 +1,5 @@
 import java.util.NoSuchElementException;
+import java.util.Arrays;
 public class MyDeque<E>{
   private E[] data;
   private int size, start, end;
@@ -60,7 +61,7 @@ public class MyDeque<E>{
     E[] temp = (E[])new Object[data.length * 2];
     for (int i = 0; i < size; i++) {
       if (start + i >= size) {
-        temp[i] = data[i + start - data.length];
+        temp[i] = data[i + start - size];
       }else {
         temp[i] = data[i + start];
       }
@@ -105,6 +106,7 @@ public class MyDeque<E>{
     data[end] = element;
   }
   public E removeFirst(){
+    System.out.println(toString());
     if (size == 0) {
       throw new NoSuchElementException();
     }
